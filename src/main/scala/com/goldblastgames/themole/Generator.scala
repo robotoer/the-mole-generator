@@ -43,13 +43,16 @@ object Generator {
   def skill(name: String) = <skill name={ name } min="0" max={ randomMax.toString } />
 
   def player(name: String, camp: String, allegiance: String) = {
-    <player name={ name } camp={ camp } allegiance={ allegiance }>
+    val playerXML = <player name={ name } camp={ camp } allegiance={ allegiance }>
       <skills>
         {
           skills.map(name => skill(name))
         }
       </skills>
     </player>
+
+    scala.xml.XML.save(name + ".txt", playerXML)
+    playerXML
   }
 
   def main(args: Array[String]) {
