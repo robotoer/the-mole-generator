@@ -20,12 +20,12 @@ object Generator {
       "daisy"
   )
   val skills = Seq(
-      "wetwork",
-      "information-gathering",
-      "sexitude",
-      "stoicism",
-      "sabotage",
-      "subterfuge"
+      "Wetwork",
+      "Information-gathering",
+      "Sexitude",
+      "Stoicism",
+      "Sabotage",
+      "Subterfuge"
   )
   val roles = Seq(
       ("America", "USSR"),
@@ -35,8 +35,8 @@ object Generator {
       ("USSR", "USSR"),
       ("USSR", "USSR")
   )
-  val dropFreq = 14400000
-  val missionFreq = 86400000
+  val dropFreq = 60000 // 1 minute for playtest
+  val missionFreq = 300000 // 5 minutes for playtest
 
   def randomMax: Int = (Random.nextGaussian * 2.0 + 6.0).toInt
 
